@@ -1,0 +1,49 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Вход";
+}
+
+
+<div class="centerlook">
+    
+    <div class="rect" style="margin-top:8%; width:50%; min-width:100px;">
+        <h2>@ViewData["Title"]</h2>
+
+        <form method="post" style="margin:3%">
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group" >
+                <div class="checkbox">
+                    <label asp-for="Input.RememberMe">
+                        <input asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" style="width:60%; margin: 0 20%;height:100%;">
+                <button type="submit" class="submitbutton">Войти</button>
+            </div>
+            <div class="form-group" style="margin: 7px auto; width:max-content;">
+                <p  >
+                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" >Регистрация</a>
+                </p>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

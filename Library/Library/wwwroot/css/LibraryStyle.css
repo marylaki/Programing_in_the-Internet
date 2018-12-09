@@ -1,0 +1,63 @@
+﻿.layouthtml {
+    height: 100%;
+}
+
+.layout {
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/book2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    position: fixed;
+
+}
+
+.rect {
+    border: solid;
+    border-radius: 20px;
+    border-color: rgb(85, 68, 34);
+    background-color: rgba(250, 235, 215, 0.6);
+    opacity: 0.8;
+    align-items: center;
+}
+.centerlook {
+margin-top:50px;
+width:100%;
+height:90%;
+    position: fixed;
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.error {
+    padding-left: 400px;
+    font-weight: bold;
+    width: 1000px;
+    color: red;
+}
+
+
+.content {
+    height: inherit;
+    width: inherit;
+
+}
+h2{
+    margin:0 auto;
+    margin-top:5px;
+    width:fit-content;
+}
+.submitbutton {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(85, 68, 34,0.5);
+    border-color: rgb(85, 68, 34);
+}
+
+

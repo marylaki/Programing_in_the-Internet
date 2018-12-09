@@ -1,0 +1,177 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+
+@*<script type="text/javascript">
+    function yesnoCheck() {
+        if (document.getElementById('yesCheck').checked) {
+            document.getElementById('LibrarianCode').innerText = 'XXX';
+            document.getElementById('LibrarianDiv').style.display = 'block';
+        } else {
+            document.getElementById('LibrarianCode').innerText = 'XXX';
+            document.getElementById('LibrarianDiv').style.display = 'none';
+
+        }
+        document.getElementById('LibrarianCode').val = 'AAAA';
+
+    }
+</script>*@
+<style>
+    .input-validation-error {
+        background-color: #CD5C5C;
+    }
+    </style>
+<div class="centerlook">
+    <div class="rect" style="margin-top:1%; width:35%; min-width:100px;">
+        <h2>@ViewData["Title"]</h2>
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post" style="margin:3%">
+            @*<div asp-validation-summary="All" class="text-danger"></div>*@
+            <div class="form-group">
+                <table width="100%">
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Input.LastName"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Input.LastName" class="form-control" />
+                            @*<span asp-validation-for="Input.LastName" class="text-danger"></span>*@
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <table width="100%">
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Input.Name"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Input.Name" class="form-control" />
+                            @*<span asp-validation-for="Input.Name" class="text-danger"></span>*@
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <table width="100%">
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Input.FatherName"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Input.FatherName" class="form-control" />
+                            @*<span asp-validation-for="Input.FatherName" class="text-danger"></span>*@
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <table width="100%">
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Input.BDay"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Input.BDay" class="form-control" />
+                            @*<span asp-validation-for="Input.BDay" class="text-danger"></span>*@
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <div class="form-group">
+                <table width="100%">
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Input.Address"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Input.Address" class="form-control" />
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <table width="100%">
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Input.Phone"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Input.Phone" class="form-control" />
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <table width="100%">
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Email"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Email" class="form-control" />
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div style="width:100%; background:rgba(85, 68, 34,0.5);  border-radius:15px">
+                <table width="97%" style="margin: 5px">
+                    <tr>
+                        <td width="45%">
+                            <label id="YesNoLabel">Если вы библиотекарь, ввдедите ключ доступа, если нет - оставте поле пустым.</label>
+                        </td>
+                        <td width="30%">
+                            <div class="form-group" id="LibrarianDiv">
+                                <input asp-for="SecretKey" class="form-control" id="LibrarianCode" />
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <div class="form-group">
+                <table width="100%">
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Input.Password"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Input.Password" class="form-control" />
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="form-group">
+                <table width="100%" >
+                    <tr>
+                        <td width="30%">
+                            <label asp-for="Input.ConfirmPassword"></label>
+                        </td>
+                        <td width="60%">
+                            <input asp-for="Input.ConfirmPassword" class="form-control" />
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+            <button type="submit" class="submitbutton">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    }
